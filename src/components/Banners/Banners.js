@@ -12,7 +12,7 @@ const Banners = ({ banner }) => {
     <Carousel.Item key={item.id}>
       <img
         className={`d-block w-100 ${classes.bannerImg}`}
-        src={`${publicRuntimeConfig.baseUrl}${item.image.url}`}
+        src={item.image.url}
         alt={item.title}
       />
       <Carousel.Caption>

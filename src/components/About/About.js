@@ -7,7 +7,7 @@ const About = ({ about }) => {
       <div className="mb-4">
         <img
           className="d-block w-100"
-          src={`${process.env.STRAPI_BASE_URL}${about.image.url}`}
+          src={about.image.url}
           alt={about.title}
         />
       </div>

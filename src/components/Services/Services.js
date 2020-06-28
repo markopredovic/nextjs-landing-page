@@ -11,7 +11,7 @@ const Services = ({ services }) => {
             <div className="mb-3">
               <img
                 className="d-block w-100"
-                src={`${process.env.STRAPI_BASE_URL}${service.image.url}`}
+                src={service.image.url}
                 alt={service.title}
               />
             </div>
