@@ -5,7 +5,7 @@ import ContactForm from "../forms/ContactForm";
 
 const Contact = ({ contact }) => {
   return (
-    <div id="#contact" className="mb-5">
+    <div id="contact" className="mb-5">
       <h3 className="mb-4">Contact us</h3>
       <div className="mb-4">
         <p>{contact.info}</p>

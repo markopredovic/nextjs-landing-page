@@ -17,6 +17,7 @@
     "react-bootstrap": "^1.0.1",
     "react-dom": "16.13.1",
     "swr": "^0.2.3",
+    "use-media": "^1.4.0",
     "yup": "^0.29.1"
   },
   "devDependencies": {
