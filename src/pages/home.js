@@ -1,5 +1,3 @@
-import HomePage, {
-  getServerSideProps,
-} from "../components/containers/homepage";
+import HomePage, { getStaticProps } from "../components/containers/homepage";
 
-export { HomePage as default, getServerSideProps };
+export { HomePage as default, getStaticProps };

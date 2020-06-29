@@ -53,7 +53,7 @@ const HomePage = ({ homepage }) => {
 
 export default HomePage;
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   try {
     const res = await axiosInstance.get("/homepage");
     const homepage = res.data;
