@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import { Container } from "react-bootstrap";
 import useSWR from "swr";
 
@@ -36,9 +36,10 @@ const HomePage = ({ homepage }) => {
 
   return (
     <Layout>
-      <Head>
-        <title>Homepage</title>
-      </Head>
+      <NextSeo
+        title="Landing page"
+        description="Simple next js / strapi landing page."
+      />
       <Banners banner={home_banner.items} />
       <Container>
         <About about={home_about} />
