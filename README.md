@@ -9,7 +9,7 @@ Strapi is hosted on [heroku server](https://www.heroku.com/).
 
 ### Features:
 
-- Server side rendering (SSR)
+- Static generation
 - Headless CMS Strapi (homepage single content type)
 - [Formik](https://jaredpalmer.com/formik/) contact form with [yup](https://github.com/jquense/yup) validation schema
 - Bootstrap 4 Css framework
