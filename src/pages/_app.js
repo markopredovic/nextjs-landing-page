@@ -2,6 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import { SWRConfig } from "swr";
 // import "bootstrap/dist/css/bootstrap.min.css";
+import "../css/custom.css";
+import "swiper/css/swiper.css";
 
 import axiosInstance from "../axiosInstance";
 

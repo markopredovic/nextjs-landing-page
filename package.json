@@ -16,6 +16,8 @@
     "react": "16.13.1",
     "react-bootstrap": "^1.0.1",
     "react-dom": "16.13.1",
+    "react-id-swiper": "^4.0.0",
+    "swiper": "^5.4.5",
     "swr": "^0.2.3",
     "use-media": "^1.4.0",
     "yup": "^0.29.1"

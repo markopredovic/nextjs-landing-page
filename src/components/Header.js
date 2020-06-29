@@ -2,7 +2,11 @@ import React from "react";
 import { Navbar, Nav } from "react-bootstrap";
 import Link from "next/link";
 
+import { useSmoothScroll } from "../hooks/useSmoothScroll";
+
 export default function Header() {
+  useSmoothScroll();
+
   return (
     <header className="fixed-top">
       <Navbar bg="dark" variant="dark" expand="lg">
