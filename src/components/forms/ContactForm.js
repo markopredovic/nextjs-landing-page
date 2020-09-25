@@ -1,25 +1,25 @@
-import React from "react";
-import { Formik, ErrorMessage } from "formik";
-import * as yup from "yup";
-import { Form, Button } from "react-bootstrap";
+import React from 'react';
+import { Formik, ErrorMessage } from 'formik';
+import * as yup from 'yup';
+import { FormGroup, TextField, Button } from '@material-ui/core';
 
 const ContactForm = () => {
   const initialValues = {
-    fullName: "",
-    email: "",
-    subject: "",
-    message: "",
+    fullName: '',
+    email: '',
+    subject: '',
+    message: '',
   };
 
   const schema = yup.object({
     fullName: yup
       .string()
-      .required("Required")
-      .min(2, "Too short")
-      .max(100, "To long"),
-    email: yup.string().email("Must be valid email").required(),
+      .required('Required')
+      .min(2, 'Too short')
+      .max(100, 'To long'),
+    email: yup.string().email('Must be valid email').required(),
     subject: yup.string(),
-    message: yup.string().required("Required").min(20, "To short"),
+    message: yup.string().required('Required').min(20, 'To short'),
   });
 
   return (
@@ -44,10 +44,10 @@ const ContactForm = () => {
           handleBlur,
           isSubmitting,
         }) => (
-          <Form noValidate onSubmit={handleSubmit}>
-            <Form.Group controlId="contact.fullName">
-              <Form.Label>Full name</Form.Label>
-              <Form.Control
+          <form noValidate onSubmit={handleSubmit}>
+            <FormGroup controlId="contact.fullName">
+              <TextField
+                label="Full name"
                 type="text"
                 name="fullName"
                 placeholder="Fullname"
@@ -59,10 +59,10 @@ const ContactForm = () => {
               <ErrorMessage name="fullName">
                 {(msg) => <small className="text-danger">{msg}</small>}
               </ErrorMessage>
-            </Form.Group>
-            <Form.Group controlId="contact.email">
-              <Form.Label>Email address</Form.Label>
-              <Form.Control
+            </FormGroup>
+            <FormGroup controlId="contact.email">
+              <TextField
+                label="Email address"
                 type="text"
                 name="email"
                 placeholder="Enter email"
@@ -74,11 +74,11 @@ const ContactForm = () => {
               <ErrorMessage name="email">
                 {(msg) => <small className="text-danger">{msg}</small>}
               </ErrorMessage>
-            </Form.Group>
+            </FormGroup>
 
-            <Form.Group controlId="contact.subject">
-              <Form.Label>Subject</Form.Label>
-              <Form.Control
+            <FormGroup controlId="contact.subject">
+              <TextField
+                label="Subject"
                 type="text"
                 name="subject"
                 placeholder="Subject"
@@ -90,10 +90,10 @@ const ContactForm = () => {
               <ErrorMessage name="subject">
                 {(msg) => <small className="text-danger">{msg}</small>}
               </ErrorMessage>
-            </Form.Group>
-            <Form.Group controlId="contact.message">
-              <Form.Label>Message</Form.Label>
-              <Form.Control
+            </FormGroup>
+            <FormGroup controlId="contact.message">
+              <TextField
+                label="Message"
                 as="textarea"
                 rows="5"
                 name="message"
@@ -106,12 +106,12 @@ const ContactForm = () => {
               <ErrorMessage name="message">
                 {(msg) => <small className="text-danger">{msg}</small>}
               </ErrorMessage>
-            </Form.Group>
+            </FormGroup>
 
             <Button variant="primary" type="submit" disabled={isSubmitting}>
               Submit
             </Button>
-          </Form>
+          </form>
         )}
       </Formik>
     </div>

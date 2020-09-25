@@ -1,22 +1,42 @@
-import React from "react";
-import PropTypes from "prop-types";
-import useMedia from "use-media";
-import Swiper from "react-id-swiper";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styled from '@emotion/styled';
+import Swiper from 'react-id-swiper';
+import { Box, Typography, useTheme } from '@material-ui/core';
+import SectionTitle from '../shared/SectionTitle';
+import { SwiperWrapper } from '../Banners';
 
-import classes from "./services.module.css";
+const ServiceBox = styled(Box)`
+  height: 350px;
+
+  img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+`;
+
+const ContentBox = styled(Box)`
+  text-align: center;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.5);
+`;
 
 const Services = ({ services }) => {
-  const isMobile = useMedia({ maxWidth: "767px" });
+  const theme = useTheme();
 
   const params = {
+    lazy: true,
     pagination: {
-      el: ".swiper-pagination",
-      type: "bullets",
+      el: '.swiper-pagination',
+      type: 'bullets',
       clickable: true,
     },
     navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
     },
     spaceBetween: 30,
     breakpoints: {
@@ -36,26 +56,37 @@ const Services = ({ services }) => {
   };
 
   return (
-    <div id="services" className={`mb-5 ${classes.root}`}>
-      <h3 className="mb-4">{services.title}</h3>
+    <SwiperWrapper id="services" theme={theme}>
+      <Box mb={4} textAlign="center">
+        <SectionTitle>{services.title}</SectionTitle>
+      </Box>
       <Swiper {...params}>
         {services.items.map((service) => (
-          <div key={service.id} className="pb-3">
-            <div className="mb-3">
-              <img
-                className={`d-block w-100 ${classes.serviceImg}`}
-                src={service.image.url}
-                alt={service.title}
-              />
-            </div>
-            <div>
-              <h4>{service.title}</h4>
-              <p>{service.description}</p>
-            </div>
-          </div>
+          <ServiceBox key={service.id} position="relative">
+            <img
+              src="/blur.jpg"
+              data-src={service.image.url}
+              alt={service.title}
+              className="swiper-lazy"
+            />
+            <div className="swiper-lazy-preloader swiper-lazy-preloader-white" />
+            <ContentBox
+              position="absolute"
+              bottom="10%"
+              left="10%"
+              width="80%"
+              px={2}
+              py={1}
+            >
+              <Typography variant="h4" gutterBottom>
+                {service.title}
+              </Typography>
+              <Typography variant="subtitle1">{service.description}</Typography>
+            </ContentBox>
+          </ServiceBox>
         ))}
       </Swiper>
-    </div>
+    </SwiperWrapper>
   );
 };
 

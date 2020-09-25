@@ -1,20 +1,20 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { NextSeo } from "next-seo";
-import { Container } from "react-bootstrap";
-import useSWR from "swr";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { NextSeo } from 'next-seo';
+import { Box, Container } from '@material-ui/core';
+import useSWR from 'swr';
 
-import axiosInstance from "../../axiosInstance";
-import Layout from "../UI/Layout";
-import Banners from "../Banners";
-import About from "../About";
-import Services from "../Services";
-import Testimonials from "../Testimonials";
-import Contact from "../Contact";
+import axiosInstance from '../../axiosInstance';
+import Layout from '../UI/Layout';
+import Banners from '../Banners';
+import About from '../About';
+import Services from '../Services';
+import Testimonials from '../Testimonials';
+import Contact from '../Contact';
 
 const HomePage = ({ homepage }) => {
   // swr get data
-  const { data, error } = useSWR("/homepage", {
+  const { data, error } = useSWR('/homepage', {
     initialData: homepage,
     revalidateOnFocus: false,
   });
@@ -40,12 +40,20 @@ const HomePage = ({ homepage }) => {
         title="Landing page"
         description="Simple next js / strapi landing page."
       />
-      <Banners banner={home_banner.items} />
+      <Box pb={8}>
+        <Banners banner={home_banner.items} />
+      </Box>
       <Container>
-        <About about={home_about} />
-        <Services services={home_services} />
-        <Testimonials testimonials={home_testimonials} />
-        <Contact contact={home_contact} />
+        <Box pb={8}>
+          <About about={home_about} />
+        </Box>
+        <Box pb={8}>
+          <Services services={home_services} />
+        </Box>
+        <Box pb={8}>
+          <Testimonials testimonials={home_testimonials} />
+        </Box>
+        {/*<Contact contact={home_contact} />*/}
       </Container>
     </Layout>
   );
@@ -55,7 +63,7 @@ export default HomePage;
 
 export async function getStaticProps() {
   try {
-    const res = await axiosInstance.get("/homepage");
+    const res = await axiosInstance.get('/homepage');
     const homepage = res.data;
     return {
       props: {
@@ -63,7 +71,7 @@ export async function getStaticProps() {
       },
     };
   } catch (e) {
-    console.log("e", e);
+    console.log('e', e);
   }
 }
 

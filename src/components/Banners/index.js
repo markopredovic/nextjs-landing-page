@@ -1,3 +1,3 @@
-import Banners from "./Banners";
+import Banners, { SwiperWrapper } from './Banners';
 
-export default Banners;
+export { SwiperWrapper, Banners as default };
