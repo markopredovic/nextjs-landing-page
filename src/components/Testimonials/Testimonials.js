@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { Box, Typography, useTheme } from '@material-ui/core';
 import styled from '@emotion/styled';
 import Swiper from 'react-id-swiper';
-import { SwiperWrapper } from '../Banners';
 import SectionTitle from '../shared/SectionTitle';
 
 const WrapperBox = styled(Box)(({ theme }) => ({

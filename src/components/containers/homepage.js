@@ -53,7 +53,9 @@ const HomePage = ({ homepage }) => {
         <Box pb={8}>
           <Testimonials testimonials={home_testimonials} />
         </Box>
-        {/*<Contact contact={home_contact} />*/}
+        <Box pb={8}>
+          <Contact contact={home_contact} />
+        </Box>
       </Container>
     </Layout>
   );

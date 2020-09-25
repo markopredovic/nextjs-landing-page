@@ -1,9 +1,27 @@
 import React from 'react';
 import { Formik, ErrorMessage } from 'formik';
 import * as yup from 'yup';
-import { FormGroup, TextField, Button } from '@material-ui/core';
+import {
+  FormGroup,
+  TextField,
+  Button,
+  Box,
+  useTheme,
+  Typography,
+} from '@material-ui/core';
+import styled from '@emotion/styled';
+
+const FormGroupWrapper = styled(FormGroup)`
+  margin-bottom: 2rem;
+`;
+
+const StyledError = styled.small(({ theme }) => ({
+  color: theme.palette.error.main,
+}));
 
 const ContactForm = () => {
+  const theme = useTheme();
+
   const initialValues = {
     fullName: '',
     email: '',
@@ -23,8 +41,10 @@ const ContactForm = () => {
   });
 
   return (
-    <div>
-      <h4 className="mb-4">Send us Email</h4>
+    <Box>
+      <Typography variant="h4" gutterBottom>
+        Send us Email
+      </Typography>
       <Formik
         initialValues={initialValues}
         validationSchema={schema}
@@ -45,7 +65,7 @@ const ContactForm = () => {
           isSubmitting,
         }) => (
           <form noValidate onSubmit={handleSubmit}>
-            <FormGroup controlId="contact.fullName">
+            <FormGroupWrapper>
               <TextField
                 label="Full name"
                 type="text"
@@ -54,13 +74,14 @@ const ContactForm = () => {
                 value={values.fullName}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                isValid={touched.fullName && !errors.fullName}
+                variant="outlined"
+                size="small"
               />
               <ErrorMessage name="fullName">
-                {(msg) => <small className="text-danger">{msg}</small>}
+                {(msg) => <StyledError theme={theme}>{msg}</StyledError>}
               </ErrorMessage>
-            </FormGroup>
-            <FormGroup controlId="contact.email">
+            </FormGroupWrapper>
+            <FormGroupWrapper>
               <TextField
                 label="Email address"
                 type="text"
@@ -69,14 +90,15 @@ const ContactForm = () => {
                 value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                isValid={touched.email && !errors.email}
+                variant="outlined"
+                size="small"
               />
               <ErrorMessage name="email">
-                {(msg) => <small className="text-danger">{msg}</small>}
+                {(msg) => <StyledError theme={theme}>{msg}</StyledError>}
               </ErrorMessage>
-            </FormGroup>
+            </FormGroupWrapper>
 
-            <FormGroup controlId="contact.subject">
+            <FormGroupWrapper>
               <TextField
                 label="Subject"
                 type="text"
@@ -85,36 +107,46 @@ const ContactForm = () => {
                 value={values.subject}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                isValid={touched.subject && !errors.subject}
+                variant="outlined"
+                size="small"
               />
               <ErrorMessage name="subject">
-                {(msg) => <small className="text-danger">{msg}</small>}
+                {(msg) => <StyledError theme={theme}>{msg}</StyledError>}
               </ErrorMessage>
-            </FormGroup>
-            <FormGroup controlId="contact.message">
+            </FormGroupWrapper>
+            <FormGroupWrapper>
               <TextField
                 label="Message"
-                as="textarea"
+                type="text"
+                multiline
                 rows="5"
                 name="message"
                 placeholder="Message"
                 value={values.message}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                isValid={touched.message && !errors.message}
+                variant="outlined"
+                size="small"
               />
               <ErrorMessage name="message">
-                {(msg) => <small className="text-danger">{msg}</small>}
+                {(msg) => <StyledError theme={theme}>{msg}</StyledError>}
               </ErrorMessage>
-            </FormGroup>
+            </FormGroupWrapper>
 
-            <Button variant="primary" type="submit" disabled={isSubmitting}>
-              Submit
-            </Button>
+            <Box display="flex" justifyContent="flex-end">
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary"
+                disabled={isSubmitting}
+              >
+                Submit
+              </Button>
+            </Box>
           </form>
         )}
       </Formik>
-    </div>
+    </Box>
   );
 };
 
