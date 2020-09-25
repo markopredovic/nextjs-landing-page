@@ -1,9 +1,9 @@
-import { useEffect } from "react";
+import { useEffect } from 'react';
 
 const useSmoothScroll = () => {
   const getElementTop = (element) => {
-    const _href = element.getAttribute("href");
-    if (_href === "/") {
+    const _href = element.getAttribute('href');
+    if (_href === '/') {
       return 0;
     }
     const _id = _href.substring(2);
@@ -22,23 +22,23 @@ const useSmoothScroll = () => {
     window.scroll({
       top: elementTop,
       left: 0,
-      behavior: "smooth",
+      behavior: 'smooth',
     });
   };
 
   const bindEvents = () => {
-    const links = document.querySelectorAll(".nav-link, .navbar-brand");
+    const links = document.querySelectorAll('.nav-link');
 
     links.forEach((link) => {
-      link.addEventListener("click", handleScroll);
+      link.addEventListener('click', handleScroll);
     });
   };
 
   const detouchEvents = () => {
-    const links = document.querySelectorAll(".nav-link, .navbar-brand");
+    const links = document.querySelectorAll('.nav-link, .navbar-brand');
 
     links.forEach((link) => {
-      link.removeEventListener("click", handleScroll);
+      link.removeEventListener('click', handleScroll);
     });
   };
 
