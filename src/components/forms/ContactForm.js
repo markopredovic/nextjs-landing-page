@@ -8,6 +8,7 @@ import {
   Box,
   useTheme,
   Typography,
+  useMediaQuery,
 } from '@material-ui/core';
 import styled from '@emotion/styled';
 
@@ -20,6 +21,7 @@ const StyledError = styled.small(({ theme }) => ({
 }));
 
 const ContactForm = () => {
+  const isDesktop = useMediaQuery('(min-width: 960px)');
   const theme = useTheme();
 
   const initialValues = {
@@ -75,7 +77,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 variant="outlined"
-                size="small"
+                size={isDesktop ? 'medium' : 'small'}
               />
               <ErrorMessage name="fullName">
                 {(msg) => <StyledError theme={theme}>{msg}</StyledError>}
@@ -91,7 +93,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 variant="outlined"
-                size="small"
+                size={isDesktop ? 'medium' : 'small'}
               />
               <ErrorMessage name="email">
                 {(msg) => <StyledError theme={theme}>{msg}</StyledError>}
@@ -108,7 +110,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 variant="outlined"
-                size="small"
+                size={isDesktop ? 'medium' : 'small'}
               />
               <ErrorMessage name="subject">
                 {(msg) => <StyledError theme={theme}>{msg}</StyledError>}
@@ -126,7 +128,7 @@ const ContactForm = () => {
                 onChange={handleChange}
                 onBlur={handleBlur}
                 variant="outlined"
-                size="small"
+                size={isDesktop ? 'medium' : 'small'}
               />
               <ErrorMessage name="message">
                 {(msg) => <StyledError theme={theme}>{msg}</StyledError>}
@@ -139,6 +141,7 @@ const ContactForm = () => {
                 variant="contained"
                 color="primary"
                 disabled={isSubmitting}
+                size={isDesktop ? 'large' : 'medium'}
               >
                 Submit
               </Button>

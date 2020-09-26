@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { NextSeo } from 'next-seo';
 import { Box, Container } from '@material-ui/core';
-import useSWR from 'swr';
 
 import axiosInstance from '../../axiosInstance';
 import Layout from '../UI/Layout';
@@ -13,19 +12,6 @@ import Testimonials from '../Testimonials';
 import Contact from '../Contact';
 
 const HomePage = ({ homepage }) => {
-  // swr get data
-  const { data, error } = useSWR('/homepage', {
-    initialData: homepage,
-    revalidateOnFocus: false,
-  });
-
-  if (error) {
-    return <div>Error...</div>;
-  }
-  if (!data) {
-    return <div>Loading...</div>;
-  }
-
   const {
     home_banner,
     home_about,

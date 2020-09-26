@@ -23,7 +23,12 @@ const About = ({ about }) => {
   const theme = useTheme();
 
   return (
-    <Box id="about" display="flex" flexDirection={{ xs: 'column', md: 'row' }}>
+    <Box
+      id="about"
+      display="flex"
+      flexDirection={{ xs: 'column', md: 'row' }}
+      alignItems="center"
+    >
       <ImageBox
         mb={{ xs: theme.spacing(1) / 2, md: '0' }}
         width={{ md: '45%' }}
