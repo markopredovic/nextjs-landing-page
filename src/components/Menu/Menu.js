@@ -3,8 +3,9 @@ import Link from 'next/link';
 import { Box, List, ListItem } from '@material-ui/core';
 import styled from '@emotion/styled';
 
-const MenuWrapper = styled(Box)`
-  nav {
+const MenuWrapper = styled(Box)(({ isDesktop }) =>
+  !isDesktop
+    ? `nav {
     li a {
       display: block;
       width: 100%;
@@ -15,12 +16,24 @@ const MenuWrapper = styled(Box)`
       text-transform: uppercase;
       line-height: 1.8;
     }
-  }
-`;
+  }`
+    : `nav {
+    display: flex;
 
-const Menu = () => {
+    li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      line-height: 1.8;
+    }
+  }`
+);
+
+const Menu = ({ isDesktop }) => {
+  console.log('is desktop', isDesktop);
   return (
-    <MenuWrapper>
+    <MenuWrapper isDesktop={isDesktop}>
       <List component="nav" aria-label="main">
         <ListItem>
           <Link href="/" passHref>

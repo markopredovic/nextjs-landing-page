@@ -36,12 +36,27 @@ const theme = createMuiTheme({
     htmlFontSize: 10,
     h3: {
       fontSize: '3.6rem',
+      '@media (min-width: 600px)': {
+        fontSize: '4rem',
+      },
     },
     h4: {
       fontSize: '2.4rem',
+      '@media (min-width: 600px)': {
+        fontSize: '2.8rem',
+      },
     },
     body1: {
       fontSize: 17,
+      '@media (min-width: 600px)': {
+        fontSize: '2rem',
+      },
+    },
+    subtitle1: {
+      fontSize: 18,
+      '@media (min-width: 600px)': {
+        fontSize: '2rem',
+      },
     },
   },
   props: {

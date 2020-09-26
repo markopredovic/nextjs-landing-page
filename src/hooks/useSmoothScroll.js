@@ -35,7 +35,7 @@ const useSmoothScroll = () => {
   };
 
   const detouchEvents = () => {
-    const links = document.querySelectorAll('.nav-link, .navbar-brand');
+    const links = document.querySelectorAll('.nav-link');
 
     links.forEach((link) => {
       link.removeEventListener('click', handleScroll);

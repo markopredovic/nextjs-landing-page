@@ -14,6 +14,22 @@ const BannerBox = styled(Box)`
     object-fit: cover;
     object-position: center;
   }
+
+  @media (min-width: 600px) {
+    height: 400px;
+  }
+
+  @media (min-width: 960px) {
+    height: 450px;
+  }
+
+  @media (min-width: 1280px) {
+    height: 500px;
+  }
+
+  @media (min-width: 1920px) {
+    height: 600px;
+  }
 `;
 
 const ContentBox = styled(Box)`
