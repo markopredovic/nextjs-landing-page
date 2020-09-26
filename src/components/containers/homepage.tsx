@@ -26,20 +26,20 @@ const HomePage = ({ homepage }) => {
         title="Landing page"
         description="Simple next js / strapi landing page."
       />
-      <Box pb={8}>
+      <Box pb={10}>
         <Banners banner={home_banner.items} />
       </Box>
       <Container>
-        <Box pb={8}>
+        <Box pb={10}>
           <About about={home_about} />
         </Box>
-        <Box pb={8}>
+        <Box pb={10}>
           <Services services={home_services} />
         </Box>
-        <Box pb={8}>
+        <Box pb={10}>
           <Testimonials testimonials={home_testimonials} />
         </Box>
-        <Box pb={8}>
+        <Box pb={10}>
           <Contact contact={home_contact} />
         </Box>
       </Container>

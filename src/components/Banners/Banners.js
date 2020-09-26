@@ -11,6 +11,7 @@ const BannerBox = styled(Box)`
 
   img {
     display: block;
+    width: 100%;
     object-fit: cover;
     object-position: center;
   }
@@ -45,6 +46,15 @@ const ContentBox = styled(Box)`
   h4 {
     margin-bottom: 1rem;
     font-weight: 600;
+  }
+
+  @media (min-width: 1280px) {
+    width: 60%;
+    left: 20%;
+  }
+  @media (min-width: 1920px) {
+    width: 50%;
+    left: 25%;
   }
 `;
 
