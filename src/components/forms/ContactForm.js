@@ -72,7 +72,6 @@ const ContactForm = () => {
                 label="Full name"
                 type="text"
                 name="fullName"
-                placeholder="Fullname"
                 value={values.fullName}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -88,7 +87,6 @@ const ContactForm = () => {
                 label="Email address"
                 type="text"
                 name="email"
-                placeholder="Enter email"
                 value={values.email}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -105,7 +103,6 @@ const ContactForm = () => {
                 label="Subject"
                 type="text"
                 name="subject"
-                placeholder="Subject"
                 value={values.subject}
                 onChange={handleChange}
                 onBlur={handleBlur}
@@ -123,7 +120,6 @@ const ContactForm = () => {
                 multiline
                 rows="5"
                 name="message"
-                placeholder="Message"
                 value={values.message}
                 onChange={handleChange}
                 onBlur={handleBlur}

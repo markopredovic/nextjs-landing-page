@@ -11,17 +11,23 @@ const Contact = ({ contact }) => {
       <Box mb={4} textAlign="center">
         <SectionTitle>Contact us</SectionTitle>
       </Box>
-      <Box mb={4}>
-        <Typography variant="h4" gutterBottom>
-          Contact info
-        </Typography>
-        <Typography variant="body1" gutterBottom>
-          {contact.info}
-        </Typography>
-        <Typography variant="body1">{contact.address}</Typography>
-      </Box>
-      <Box>
-        <ContactForm />
+      <Box
+        display="flex"
+        flexDirection={{ xs: 'column', lg: 'row' }}
+        justifyContent="space-between"
+      >
+        <Box mb={4} width={{ xs: '100%', lg: '45%' }}>
+          <Typography variant="h4" gutterBottom>
+            Contact info
+          </Typography>
+          <Typography variant="body1" gutterBottom>
+            {contact.info}
+          </Typography>
+          <Typography variant="body1">{contact.address}</Typography>
+        </Box>
+        <Box width={{ xs: '100%', lg: '50%' }}>
+          <ContactForm />
+        </Box>
       </Box>
     </Box>
   );

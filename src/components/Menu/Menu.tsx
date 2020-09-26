@@ -16,7 +16,8 @@ const MenuWrapper = styled(Box)(({ isDesktop }) =>
       text-transform: uppercase;
       line-height: 1.8;
     }
-  }`
+  }
+  `
     : `nav {
     display: flex;
 
@@ -27,7 +28,11 @@ const MenuWrapper = styled(Box)(({ isDesktop }) =>
       text-transform: uppercase;
       line-height: 1.8;
     }
-  }`
+  }
+    @media (min-width: 1280px) {
+    nav li a { font-size: 1.8rem; }
+  }
+  `
 );
 
 const Menu = ({ isDesktop }) => {

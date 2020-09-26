@@ -39,10 +39,22 @@ const theme = createMuiTheme({
       '@media (min-width: 600px)': {
         fontSize: '4rem',
       },
+      '@media (min-width: 1280px)': {
+        fontSize: '4.4rem',
+      },
     },
     h4: {
       fontSize: '2.4rem',
       '@media (min-width: 600px)': {
+        fontSize: '2.8rem',
+      },
+      '@media (min-width: 1280px)': {
+        fontSize: '3.2rem',
+      },
+    },
+    h5: {
+      fontSize: '2.4rem',
+      '@media (min-width: 1280px)': {
         fontSize: '2.8rem',
       },
     },
@@ -50,6 +62,9 @@ const theme = createMuiTheme({
       fontSize: 17,
       '@media (min-width: 600px)': {
         fontSize: '2rem',
+      },
+      '@media (min-width: 1280px)': {
+        fontSize: '2.2rem',
       },
     },
     body2: {
@@ -65,6 +80,9 @@ const theme = createMuiTheme({
       fontSize: 18,
       '@media (min-width: 600px)': {
         fontSize: '2rem',
+      },
+      '@media (min-width: 1280px)': {
+        fontSize: '2.2rem',
       },
     },
   },
